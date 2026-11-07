@@ -1,0 +1,37 @@
+vstack#root gap=14 padding=26 align=stretch
+├─ hstack#hstack-1 gap=8 align=center
+│  ├─ label#label-1.h1 text="系统监控"
+│  ├─ badge#badge-1.ok text="实时"
+│  ├─ spacer#spacer-1
+│  └─ label#label-2.muted text="12:00:00"
+├─ hstack#hstack-2 gap=14 align=stretch
+│  ├─ card#card-1 gap=8 padding=14
+│  │  ├─ label#label-3.muted text="CPU 使用率"
+│  │  ├─ label#cpu-val.metric text="37%"
+│  │  ├─ progress#progress-1 level=0.37
+│  │  └─ label#label-4.small text="24 逻辑核心 · 繁忙 37%"
+│  ├─ card#card-2 gap=8 padding=14
+│  │  ├─ label#label-5.muted text="内存"
+│  │  ├─ label#mem-val.metric text="8.8 GB"
+│  │  ├─ progress#progress-2 level=0.5605095541401274
+│  │  └─ label#label-6.small text="共 15.7 GB · 使用 56%"
+│  ├─ card#card-3 gap=8 padding=14
+│  │  ├─ label#label-7.muted text="磁盘 C:"
+│  │  ├─ label#disk-val.metric text="300 GB"
+│  │  ├─ progress#progress-3 level=0.6756756756756757
+│  │  └─ label#label-8.small text="共 444 GB · 使用 68%"
+│  └─ card#card-4 gap=8 padding=14
+│     ├─ label#label-9.muted text="Goroutines"
+│     ├─ label#goro-val.metric text="5"
+│     ├─ progress#progress-4 level=0.078125
+│     └─ label#label-10.small text="运行 2m41s"
+├─ card#card-5 gap=16 padding=18
+│  └─ hstack#hstack-3 gap=14 align=center
+│     ├─ label#label-11.h3 text="刷新间隔"
+│     ├─ slider#slider-1 value=1 min=1 max=10 step=1
+│     ├─ label#label-12.muted text="1 秒"
+│     ├─ spacer#spacer-2
+│     └─ button#button-1 text="立即刷新" variant=primary on:click
+└─ card#card-6 gap=8 padding=18
+   ├─ label#label-13.h3 text="最近采样"
+   └─ label#label-14.mono.small.muted text="12:00:00  CPU  37%   MEM  8.8/15.7 GB   协程 5\n"

@@ -1,0 +1,33 @@
+hstack#root gap=0 align=stretch justify=start
+├─ vstack#vstack-1 gap=10 padding=22 align=stretch justify=start
+│  ├─ label#label-1.h2 text="gogui"
+│  ├─ label#label-2.muted small text="控件工坊 · WebView 渲染"
+│  ├─ sep#sep-1
+│  ├─ list#nav items="外观|交互|关于" sel=-1 gap=4
+│  ├─ spacer#spacer-1
+│  └─ label#label-3.small text="v1.0 · 声明式"
+└─ vstack#vstack-2 gap=14 padding=26 align=stretch justify=start
+   ├─ hstack#hstack-1 gap=10
+   │  ├─ label#label-4.h1 text="设置中心"
+   │  ├─ spacer#spacer-2
+   │  ├─ badge#badge-1.ok text="无头可测"
+   │  └─ badge#badge-2.warn text="golden 对照"
+   └─ tabs#tabs tabs="外观|交互|关于" active=0 gap=0
+      └─ vstack gap=14
+         ├─ card gap=10 padding=20
+         │  ├─ label.h3 text="主题与强调色"
+         │  ├─ hstack gap=14 align=center
+         │  │  ├─ label.muted text="动态效果"
+         │  │  ├─ toggle#fx-toggle checked=false on:change
+         │  │  └─ label#fx-state.muted small text="已开启"
+         │  ├─ sep
+         │  └─ hstack gap=14 align=center
+         │     ├─ label.muted text="强调色"
+         │     ├─ select#accent options="靛紫 · 闪烁|青蓝 · 冰川|绯红 · 熔岩" selected="靛紫 · 闪烁" on:change
+         │     └─ label#accent-tip.muted small text="已选：靛紫 · 闪烁"
+         └─ card gap=10 padding=20
+            ├─ label.h3 text="进度演示（拖动滑杆）"
+            ├─ slider#fill-slider value=42 min=0 max=100 step=1 on:change
+            └─ hstack gap=10 align=center
+               ├─ progress#fill-progress level=0.42
+               └─ label#fill-pct.muted small text="42%"

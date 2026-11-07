@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.27.x"
+          cache: true
+
+      - name: go vet
+        run: go vet ./...
+
+      # 像素基线受字体栈影响，CI 只跑树快照与行为断言。
+      - name: test
+        env:
+          GOGUI_SKIP_IMAGE: "1"
+        run: go test ./... -count=1
+
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.27.x"
+          cache: true
+
+      - name: build
+        run: go build ./...
